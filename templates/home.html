@@ -1,11 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>hello</h1>
-</body>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ML API</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Arimo"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Hind:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <div class="login">
+      <h1>Price Prediction</h1>
+
+      <form action="{{ url_for('predict')}}" method="post">
+        <input
+          type="text"
+          name="CRIM"
+          placeholder="CRIM"
+          value="0.07892"
+        /><br />
+        <input type="text" name="ZN" placeholder="ZN" value="131.0" /><br />
+        <input
+          type="text"
+          name="INDUS"
+          placeholder="INDUS"
+          value="0.031"
+        /><br />
+        <input type="text" name="CHAS" placeholder="CHAS" value="122.0" /><br />
+        <input type="text" name="NOX" placeholder="NOX" value="0.538" /><br />
+        <input type="text" name="RM" placeholder="RM" value="96.567" /><br />
+        <input type="text" name="Age" placeholder="Age" value="0.2" /><br />
+        <input type="text" name="DIS" placeholder="DIS" value="44.09" /><br />
+        <!-- <input type="text" name="RAD" placeholder="RAD" value="1.0" /><br>
+        <input type="text" name="TAX" placeholder="TAX" value="296" /><br>
+        <input type="text" name="PTRATIO" placeholder="PTRATIO" value="15.3"/><br>
+        <input type="text" name="B" placeholder="B" value=396.0 /><br>
+        <input type="text" name="LSTAT" placeholder="LSTAT" value="4.98"/><br> -->
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          Predict
+        </button>
+      </form>
+
+      <br />
+      <br />
+    </div>
+    {{prediction_text}}
+  </body>
 </html>
